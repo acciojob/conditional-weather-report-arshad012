@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, {useState, useEffect} from "react";
 import './../styles/App.css';
 
 function WeatherDisplay(props) {
@@ -20,7 +20,10 @@ const App = () => {
     
 
     return <>
-        <WeatherDisplay temperature={weatherState.temperature} conditions={weatherState.conditions} />
+        <WeatherDisplay 
+            temperature={weatherState.temperature} 
+            conditions={weatherState.conditions} 
+        />
     </>
 }
 
