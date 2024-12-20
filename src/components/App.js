@@ -2,21 +2,20 @@
 import React, {useState, useEffect} from "react";
 import './../styles/App.css';
 
-function WeatherDisplay(props) {
-    const {temperature, conditions} = props;
+function WeatherDisplay({temperature, conditions}) {
 
-    return temperature ? <div style={{color: temperature > 20 ? 'red' : 'blue'}}>
-        <p>Temperature is {temperature}</p>
-        <p>Condition is {conditions}</p>
-    </div> : <></>
+    return <div>
+        <p>Temperature: <span style={{color: temperature > 20 ? 'red' : 'blue'}}>{temperature}</span></p>
+        {/* <p>Condition is {conditions}</p> */}
+    </div>
 }
 
 const App = () => {
   const [weatherState, setWeatherState] = useState({ temperature: 25, conditions: "Sunny" });
     
-    useEffect(() => {
-        WeatherDisplay(weatherState);
-    }, [])
+    // useEffect(() => {
+    //     WeatherDisplay(weatherState);
+    // }, [])
     
 
     return <>
